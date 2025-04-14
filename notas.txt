@@ -1,0 +1,130 @@
+Repositorio: CRUD-SpringBoot-React-FullStack
+
+Curso de Java FullStack con React y Spring Boot (https://www.youtube.com/watch?v=3Cy3KCirn5U&t=11129s)
+
+Temario del curso:
+
+    - Introducción a React
+    - Manejo de componentes
+    - Manejo de Hooks (useState,useParams,useEffect,useNavigate)
+    - Manejo de formularios
+    - Uso de axios (Conecta el backend con el frontend)
+    - Ejercicios por cada tema
+    - Aplicación CRUD con Spring Boot y React
+
+
+Captura de eventos - Problemas propuestos:
+
+- Disponer dos controles de formulario HTML input="number" y un botón. Al presionar el botón mostrar en un alert su suma: proyecto003
+
+- Hooks: Función especial que permite conectar a la libreria de React, también permite interactuar con el estado de un componente: proyecto004
+
+- Lista de artículo: proyecto005
+
+- Componentes: Plantear un componente funcional llamado "Dado" que tenga una propiedad llamada "valor" a la cual le llega el dato a mostrar. El componente princpal seguirá siendo "App" y dentro de la misma se definirán 3 componentes de tipo "Dado": proyecto006
+
+- En el problema anterior si se necesita sortear otros tres dados estamos obligados a recargar la página. Se modificará la aplicación y se agregará un botón para que cada vez que se presione nos actualice únicamente los valores de los tres dados sin tener que recargar en forma completa la página. (Extensión React para VSCode recomendada: ES7+ React/Redux/React-Native snippets)
+
+++ Atajos: rafc
+
+import React from 'react'
+
+export const Dado = () => {
+  return (
+    <div>Dado</div>
+  )
+}
+
+- Ejercicio propuesto: Crear un contador, botón(Contar++)
+
+- Realizar una suma de números para mostrar el resultado en un componente: proyecto007
+
+
+Manejo de hooks:
+
+Un Hook es una función de JavaScript que permite crear/acceder al estado y a los ciclos de vida de React y que, para asegurar la estabilidad de la aplicación:
+
+    - useState
+    - useParams
+    - useEffect
+    - useNavigate
+
+- Problema propuesto: Actualizar en tiempo real el título de la página con los caracteres ingresados en un control input. Para esto se debe acceder directamente al DOM: proyecto008
+
+- Problema propuesto: Crear un componente que muestre por pantalla la coordenada donde se encuentra la flecha del mouse. En la componente principal disponer de un botón para desmontar la componente que muestra la coordenada. La componente "CoordenadaFlecha" debe registrar la escucha del evento 'mousemove' y desuscribirse de dicho evento cuando se desmonte la componente. En principio a medida que se mueva la flecha del mouse debe mostrarse la coordenada: proyecto009
+
+
+
+Manejo de formularios:
+
+- Problema propuesto: Confeccionar un formulario HTML que solicite la carga del nombre, edad y si tiene estudios o no una persona. Almacenar en una variable de estado de la componente cada vez que ocurre un cambio en un control de formulario. Mostrar en todo momento que datos están almacenados en la variable de estado: proyecto010
+
+- Problema propuesto: Confeccionar una aplicación que permita ingresar en un control 'input' de tipo 'text' solo valores binarios (0 - 1): proyecto011
+
+- Problema propuesto: Mostrar un control de tipo textarea. Cada vez que se ingrese un caracter actualizar la cantidad  de caracteres ingresados dentro del control: proyecto012
+
+- Problema propuesto: Mostrar en un control de tipo 'select' los días de la semana. Cuando el operador lo selecciona, mostrar cual se seleccionó en la página: proyecto013
+
+- Problema propuesto: Disponer tres controles de tipo radio que se encuentren asociados que representan si la persona tiene estudios 'primario', 'secundario' o 'universitario': proyecto014
+
+- Problema propuesto: Crear un control 'select' que muestre distintos rubros (por ejemplo: Microprocesadores, Placas de video, Gabinetes, etc), luego cuando el operador selecciona un rubro, se debe actualizar otro control 'select' que muestra todos los artículos que pertenecen a dicho rubro; ejemplo: si seleccionar Microprocesadores el segundo 'select' puede mostrar 'Intel Core I5, Intel Core I7, etc: proyecto015
+
+===================================================================================
+
+CRUD:
+
+Guardar cliente
+Eliminar cliente
+Actualizar cliente
+Listar Clientes
+Obtener un cliente
+___________________________________________________________________________________
+
+Spring Boot
+
+spring-initializr
+
+Project: Maven
+Language: Java
+
+Group: com.gestion.clientes
+Artifact - Name: gestion-clientes-backend
+Package name: com.gestion.clientes
+Packaging: Jar
+
+Dependencias:
+- Spring Data JPA
+- Spring Web
+- MySQL Driver
+- Lombok
+___________________________________________________________________________________
+
+MySQL:
+
+create database gestion_clientes_spring_boot;
+___________________________________________________________________________________
+
+Spring Boot IDE:
+
+
+(application.properties): 
+
+spring.datasource.url=jdbc:mysql://localhost:3306/gestion_clientes_spring_boot
+spring.datasource.username=
+spring.datasource.password=
+
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.hibernate.ddl-auto=update
+___________________________________________________________________________________
+
+React (VSCode u otros IDEs)
+
+Conexión Frontend (React) con el Backend (Spring Boot):
+Axios (https://www.npmjs.com/package/axios)
+Instalar en terminal de Visual Studio o donde se trabaje React:
+    npm i axios --save ( --save: para que se guarde la librería, comprobar
+    en el archivo package.json)
+
+Instalar librería para definir las rutas del CRUD: 
+React Router DOM (https://www.npmjs.com/package/react-router-dom)
+    npm i react-router-dom --save
